@@ -1,0 +1,33 @@
+@import '../shared-styles/core-variables-and-helpers';
+.InputSelect {
+    font-family: Roboto-Regular;
+
+    &__category-name {
+        font-weight: 600;
+    }
+
+    &__select-button{
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background-color: $grey;
+        }
+    }
+
+    &__chevron {
+        vertical-align: middle;
+        height: 0.8em;
+        width: 0.8em;
+        margin-left: 0.6em;
+    }
+
+    &__select-text {
+        margin: 0;
+        padding: 0.3em;
+    }
+
+    &__dropdown-menu {
+        display: none;
+    }
+}

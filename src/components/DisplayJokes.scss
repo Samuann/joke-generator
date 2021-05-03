@@ -1,0 +1,16 @@
+.DisplayJokes {
+
+&__header {
+    text-align: center;
+}    
+&__filter-search-section {
+    margin-bottom: 1.5em;
+    margin-left: 0.7em;
+}
+&__jokelist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+}

@@ -1,0 +1,14 @@
+@import '../shared-styles/base/colors';
+
+.ListJoke {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: $indianred;
+    border-radius: 0.5em;
+    margin-left: 0.7em;
+    margin-bottom: 0.7em;
+    width: 30em;
+    font-family: Roboto-Regular;
+    flex-grow: 1;
+}
