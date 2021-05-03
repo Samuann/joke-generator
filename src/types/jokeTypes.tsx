@@ -17,4 +17,5 @@ export interface jokeInfoProps {
 export interface inputSelectProps {
     category: string,
     categories: Array<string> | undefined,
+    selectAction: (category: string) => void,
 }

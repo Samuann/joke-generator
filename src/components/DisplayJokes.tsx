@@ -36,13 +36,17 @@ const DisplayJokes: React.FC = () => {
 
     useEffect(() => getCategoryList(jokeCategory), [jokeCategory]);
     
-    console.log(jokeInfo, 'jokeinfo');
+    console.log(jokeCategory, 'jokeinfo');
     return (
         <div className="DisplayJokes">
             <h1 className="DisplayJokes__header"> Joke Generation</h1>
-            <p> {`Total count: ${jokeInfo?.totalCount}`}</p>
+            <p className="DisplayJokes__sub-header"> {jokeInfo ?`Generating a total of ${jokeInfo?.totalCount} jokes`: `Waiting`}</p>
             <section className="DisplayJokes__filter-search-section">
-                <InputSelect categories={jokeInfo?.categories} category={jokeCategory}/>
+                <InputSelect 
+                    categories= {jokeInfo?.categories} 
+                    category= {jokeCategory}
+                    selectAction = {selectCategory}
+                />
             </section>
             <section className="DisplayJokes__jokelist-container">
                 { jokeList?.length 

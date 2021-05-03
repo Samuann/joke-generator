@@ -12,7 +12,9 @@ const getJokeCategoryList = async (category) => {
     return response.data;
 }
 
-export default {
+const jokeService = {
     readJokeInfo,
     getJokeCategoryList
 }
+
+export default jokeService;

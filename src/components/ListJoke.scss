@@ -11,4 +11,31 @@
     width: 30em;
     font-family: Roboto-Regular;
     flex-grow: 1;
+    justify-content: space-between;
+
+    &__header {
+        display: flex;
+        order: 2;
+    }
+
+    &__category {
+        margin-left: auto;
+    }
+
+    &__jokes {
+        margin-bottom: 2.5em;
+    }
+
+    &__single-jokes {
+        margin: 0;
+    }
+
+    &__twopart-jokes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__twopart-setup {
+        margin-bottom: 0.6em;
+    }
 }

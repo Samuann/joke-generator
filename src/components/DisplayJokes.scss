@@ -1,8 +1,14 @@
-.DisplayJokes {
+@import '../shared-styles/core-variables-and-helpers';
 
-&__header {
+.DisplayJokes {
+font-family: Roboto-Regular;
+
+&__header,
+&__sub-header 
+{
     text-align: center;
-}    
+}
+
 &__filter-search-section {
     margin-bottom: 1.5em;
     margin-left: 0.7em;
