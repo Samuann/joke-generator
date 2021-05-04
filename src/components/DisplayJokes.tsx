@@ -67,7 +67,9 @@ const DisplayJokes: React.FC<displayJokesProps> = (props) => {
         }
 
         if(error) {
-            return (<p> Joke retrieval for <strong> {searchString} </strong> is unavailable. <br/>Please try a different search term</p>)
+            return (<p> Joke retrieval for <strong> {searchString} </strong> is unavailable in <strong> {jokeCategory} </strong> category. 
+                        <br/>Please try a different search term or a different category
+                    </p>)
         }
 
         return (<p> Waiting... </p>)
