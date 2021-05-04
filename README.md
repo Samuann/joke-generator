@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To see this project on GitHub Pages 
+Open [https://samuann.github.io/joke-generator/](https://samuann.github.io/joke-generator/)
+
 ## Available Scripts
 
 In the project directory, you can run:
