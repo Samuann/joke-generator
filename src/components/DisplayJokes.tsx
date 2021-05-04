@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import jokeServices from '../services/jokeService';
 import ListJokes from './ListJokes';
 import InputSelect from './InputSelect';
 import InputSearch from './InputSearch';
-import { jokeInfoProps, jokeListProps } from '../types/jokeTypes';
+import { jokeInfoProps, jokeListProps, jokeState } from '../types/jokeTypes';
 import jokeCategoryEnum  from '../enums/jokeCategoryEnum';
+import * as jokeActions from '../store/actions/jokeActions';
 import './DisplayJokes.scss';
 
+interface DisplayJokesProps {
+    category: string,
+    updateJokeCategory: (jokeCategory: string) => void,
+}
 
-const DisplayJokes: React.FC = () => {  
+
+const DisplayJokes: React.FC<DisplayJokesProps> = (props) => {  
+    const { updateJokeCategory, category } = props;
     const [ jokeInfo, setJokeInfo ] = useState<jokeInfoProps | undefined>(undefined);
-    const [ jokeCategory, setJokeCategory ] = useState<string>(jokeCategoryEnum.any);  
+    const [ jokeCategory, setJokeCategory ] = useState<string>(category);  
     const [ jokeList, setJokeList ] = useState<Array<jokeListProps> | []>([]);
     const [ error, setError ] = useState<boolean>(false);
     const [ searchString, setSearchString ] = useState<string>('');
+    
 
     const getAllJokeInfo = (): void => {
         jokeServices.readJokeInfo()
@@ -50,6 +59,7 @@ const DisplayJokes: React.FC = () => {
 
     const selectCategory = (category: string): void => {
         setJokeCategory(category);
+        updateJokeCategory(category)
     };
 
     const handleSearchChange = (stringSearch: string): void => {
@@ -95,4 +105,14 @@ const DisplayJokes: React.FC = () => {
     );
 }
 
-export default DisplayJokes;
+const mapStateToProps = (state: jokeState) => ({
+    category: state.category
+})
+
+const mapDispatchToProps = (dispatch: any) => ({
+    updateJokeCategory: (jokeCategory: string) => {
+        dispatch(jokeActions.setCategory(jokeCategory))
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayJokes);
