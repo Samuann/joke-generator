@@ -12,8 +12,8 @@ const getJokeCategoryList = async (category) => {
     return response.data;
 };
 
-const getJokeSearched = async(searchString) => {
-    const response = await axios.get(`${baseUrl}/joke/Any?lang=en&safe-mode&amount=10&contains=${searchString}`);
+const getJokeSearched = async(searchString, category) => {
+    const response = await axios.get(`${baseUrl}/joke/${category}?lang=en&safe-mode&amount=10&contains=${searchString}`);
     return response.data;
 }
 

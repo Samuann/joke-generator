@@ -36,11 +36,10 @@ const DisplayJokes: React.FC<displayJokesProps> = (props) => {
         .catch(error => console.error(error));
     };
 
-    const getCategoryFromSearchString = (search: string): void => {
-        jokeServices.getJokeSearched(search)
+    const getCategoryFromSearchString = (search: string, category: string): void => {
+        jokeServices.getJokeSearched(search, category)
         .then(response => {
             setJokeList(response.jokes);
-            setJokeCategory(jokeCategoryEnum.any);
             setError(response.error);
             updateJokeList(response.jokes)
         })
@@ -51,7 +50,7 @@ const DisplayJokes: React.FC<displayJokesProps> = (props) => {
 
     useEffect(() => getCategoryList(jokeCategory), [jokeCategory]);
 
-    useEffect(() => getCategoryFromSearchString(searchString), [searchString]);
+    useEffect(() => getCategoryFromSearchString(searchString, jokeCategory), [searchString, jokeCategory]);
 
     const selectCategory = (category: string): void => {
         setJokeCategory(category);
