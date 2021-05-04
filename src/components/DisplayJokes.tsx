@@ -4,19 +4,13 @@ import jokeServices from '../services/jokeService';
 import ListJokes from './ListJokes';
 import InputSelect from './InputSelect';
 import InputSearch from './InputSearch';
-import { jokeInfoProps, jokeListProps, jokeState } from '../types/jokeTypes';
+import { jokeInfoProps, jokeListProps, jokeState, displayJokesProps } from '../types/jokeTypes';
 import jokeCategoryEnum  from '../enums/jokeCategoryEnum';
 import * as jokeActions from '../store/actions/jokeActions';
 import './DisplayJokes.scss';
 
-interface DisplayJokesProps {
-    category: string,
-    updateJokeCategory: (jokeCategory: string) => void,
-}
-
-
-const DisplayJokes: React.FC<DisplayJokesProps> = (props) => {  
-    const { updateJokeCategory, category } = props;
+const DisplayJokes: React.FC<displayJokesProps> = (props) => {  
+    const { updateJokeCategory, category, updateJokeList } = props;
     const [ jokeInfo, setJokeInfo ] = useState<jokeInfoProps | undefined>(undefined);
     const [ jokeCategory, setJokeCategory ] = useState<string>(category);  
     const [ jokeList, setJokeList ] = useState<Array<jokeListProps> | []>([]);
@@ -36,6 +30,7 @@ const DisplayJokes: React.FC<DisplayJokesProps> = (props) => {
         jokeServices.getJokeCategoryList(category)
         .then(response => {
             setJokeList(response.jokes);
+            updateJokeList(response.jokes);
             setError(response.error)
         })
         .catch(error => console.error(error));
@@ -47,6 +42,7 @@ const DisplayJokes: React.FC<DisplayJokesProps> = (props) => {
             setJokeList(response.jokes);
             setJokeCategory(jokeCategoryEnum.any);
             setError(response.error);
+            updateJokeList(response.jokes)
         })
         .catch(error => console.error(error));
     }
@@ -112,6 +108,9 @@ const mapStateToProps = (state: jokeState) => ({
 const mapDispatchToProps = (dispatch: any) => ({
     updateJokeCategory: (jokeCategory: string) => {
         dispatch(jokeActions.setCategory(jokeCategory))
+    },
+    updateJokeList: (jokeList: []) => {
+        dispatch(jokeActions.setJokeList(jokeList))
     }
 });
 

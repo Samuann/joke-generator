@@ -1,11 +1,13 @@
 import { jokeState } from '../../types/jokeTypes'
 
 const initialState = {
-    category: 'Any'
+    category: 'Any',
+    jokeList: []
 };
 
 interface IJoke {
-    count: number
+    category: string,
+    jokeList: []
 }
 
 type JokeAction = {
@@ -23,10 +25,14 @@ const jokeReducer = (
                 ...state,
                 category: action.payload
             }
+        case 'SET_JOKE_LIST':
+            return {
+                ...state,
+                jokeList: action.payload
+            }    
         default: 
             return state;    
     }
-
 }
 
 export default jokeReducer;

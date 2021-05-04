@@ -25,6 +25,12 @@ export interface inputSearchProps {
     searchAction: (stringSearch: string) => void;
 };
 
+export interface displayJokesProps {
+    category: string,
+    updateJokeCategory: (jokeCategory: string) => void,
+    updateJokeList: (jokeList: []) => void
+}
+
 export interface jokeState {
     category: string
 }
