@@ -10,10 +10,10 @@ import * as jokeActions from '../store/actions/jokeActions';
 import './DisplayJokes.scss';
 
 const DisplayJokes: React.FC<displayJokesProps> = (props) => {  
-    const { updateJokeCategory, category, updateJokeList } = props;
+    const { updateJokeCategory, category, updateJokeList, jokeLists } = props;
     const [ jokeInfo, setJokeInfo ] = useState<jokeInfoProps | undefined>(undefined);
     const [ jokeCategory, setJokeCategory ] = useState<string>(category);  
-    const [ jokeList, setJokeList ] = useState<Array<jokeListProps> | []>([]);
+    const [ jokeList, setJokeList ] = useState<Array<jokeListProps> | []>(jokeLists);
     const [ error, setError ] = useState<boolean>(false);
     const [ searchString, setSearchString ] = useState<string>('');
     
@@ -102,7 +102,8 @@ const DisplayJokes: React.FC<displayJokesProps> = (props) => {
 }
 
 const mapStateToProps = (state: jokeState) => ({
-    category: state.category
+    category: state.category,
+    jokeLists: state.jokeList
 })
 
 const mapDispatchToProps = (dispatch: any) => ({

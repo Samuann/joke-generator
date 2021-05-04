@@ -27,10 +27,13 @@ export interface inputSearchProps {
 
 export interface displayJokesProps {
     category: string,
+    jokeLists: Array<jokeListProps>,
     updateJokeCategory: (jokeCategory: string) => void,
     updateJokeList: (jokeList: []) => void
 }
 
 export interface jokeState {
-    category: string
+    category: string,
+    jokeList: Array<jokeListProps>
+    
 }
