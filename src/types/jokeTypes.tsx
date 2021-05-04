@@ -18,4 +18,9 @@ export interface inputSelectProps {
     category: string,
     categories: Array<string> | undefined,
     selectAction: (category: string) => void,
+    search: string,
+}
+
+export interface inputSearchProps {
+    searchAction: (stringSearch: string) => void;
 }

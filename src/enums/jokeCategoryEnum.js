@@ -7,3 +7,5 @@ const jokeCategoryEnum = {
     spooky: 'Spooky',
     christmas: 'Christmas'
 }
+
+export default jokeCategoryEnum;

@@ -9,14 +9,12 @@ const InputSelect: React.FC<inputSelectProps> = (props) => {
 
     const handleToggle = (): void => {
         setToggleDropDown(!toggleDropDown)
-    }
+    };
 
     const handleSelect = (jokeCategory: string): void => {
-        console.log('does this word here')
         selectAction(jokeCategory);
-    }
+    };
 
-    console.log(categories, category, 'categories')
     return (
         <div className="InputSelect">
             <button 
