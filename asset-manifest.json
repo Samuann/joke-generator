@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/joke-generator/static/css/main.73074a25.chunk.css",
+    "main.js": "/joke-generator/static/js/main.f41531c6.chunk.js",
+    "main.js.map": "/joke-generator/static/js/main.f41531c6.chunk.js.map",
+    "runtime-main.js": "/joke-generator/static/js/runtime-main.f76c936d.js",
+    "runtime-main.js.map": "/joke-generator/static/js/runtime-main.f76c936d.js.map",
+    "static/js/2.3f526754.chunk.js": "/joke-generator/static/js/2.3f526754.chunk.js",
+    "static/js/2.3f526754.chunk.js.map": "/joke-generator/static/js/2.3f526754.chunk.js.map",
+    "static/js/3.b765e5fe.chunk.js": "/joke-generator/static/js/3.b765e5fe.chunk.js",
+    "static/js/3.b765e5fe.chunk.js.map": "/joke-generator/static/js/3.b765e5fe.chunk.js.map",
+    "index.html": "/joke-generator/index.html",
+    "static/css/main.73074a25.chunk.css.map": "/joke-generator/static/css/main.73074a25.chunk.css.map",
+    "static/js/2.3f526754.chunk.js.LICENSE.txt": "/joke-generator/static/js/2.3f526754.chunk.js.LICENSE.txt",
+    "static/media/DisplayJokes.scss": "/joke-generator/static/media/Roboto-ThinItalic.082b9e84.ttf",
+    "static/media/chevron-down.6f0f3290.svg": "/joke-generator/static/media/chevron-down.6f0f3290.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f76c936d.js",
+    "static/js/2.3f526754.chunk.js",
+    "static/css/main.73074a25.chunk.css",
+    "static/js/main.f41531c6.chunk.js"
+  ]
+}
